@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import XiaoJieJieItem from './XiaoJieJieItem';
 
 class XiaoJieJie extends Component {
     constructor(props) {
@@ -19,7 +20,13 @@ class XiaoJieJie extends Component {
                     <ul>
                         {
                             this.state.list.map((item,index) => {
-                                return <li key={item+index}>{item}</li>
+                                return (
+                                    <XiaoJieJieItem 
+                                    key={item+index} 
+                                    index={index} 
+                                    content={item}
+                                    handleDelete={this.handleDelete.bind(this)}/>
+                                )
                             })
                         }
                     </ul>
@@ -36,6 +43,14 @@ class XiaoJieJie extends Component {
         this.setState({
             list: [...this.state.list, this.state.inputVal]
         });
+    }
+    handleDelete(index){
+        console.log("XiaoJieJie handleDelete " + index)
+        let list = this.state.list
+        list.splice(index, 1)
+        this.setState({
+            list: list
+        })
     }
 }
  
