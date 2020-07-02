@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#t1 .father{
+    display: flex;
+    border: solid 1px red;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+.son {
+    /* height: 20px; */
+    background-color: seashell;
+}
